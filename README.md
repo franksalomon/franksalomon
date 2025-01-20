@@ -9,6 +9,7 @@ Here are some of the projects I am working on:
 - **Time Series Analysis**: ARIMA, SARIMA models, and stationarity tests.
   
   ![Time Series](https://github.com/franksalomon/franksalomon/blob/main/978-1-4757-2526-1.jpeg)
+  <img src="https://github.com/franksalomon/franksalomon/blob/main/978-1-4757-2526-1.jpeg" alt="Series Temporales" width="400" />
 
 
   
