@@ -7,7 +7,10 @@ Welcome to my GitHub profile! I'm a **Master's student in Mathematical Modeling,
 Here are some of the projects I am working on:
 
 - **Time Series Analysis**: ARIMA, SARIMA models, and stationarity tests.
+  ![Time Series](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Time_series_examples.png/800px-Time_series_examples.png)
+
 - **State-Space Models**: Kalman Filter and applications in data analysis.
+  ![State-Space Model](https://upload.wikimedia.org/wikipedia/commons/1/1f/Kalman_filter_process_diagram.png)
 
 ## 🧑‍💻 Languages and Technologies I Use
 
