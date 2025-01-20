@@ -18,8 +18,8 @@ Here are some of the projects I am working on:
 
 ## 📫 How to Reach Me
 
-- Email: [salomo.ssp.96@gmail.com](mailto:fsulca001@ikasle.ehu.eus)
-- LinkedIn: [https://www.linkedin.com/in/frank-salom%C3%B3n-8251a51a8/](https://www.linkedin.com/in/franksalomonsulca)
+- Email: [salomo.ssp.96@gmail.com](mailto:salomo.ssp.96@gmail.com)
+- LinkedIn: [https://www.linkedin.com/in/frank-salom%C3%B3n-8251a51a8/](https://www.linkedin.com/in/frank-salom%C3%B3n-8251a51a8/)
 
 ---
 
