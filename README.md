@@ -8,7 +8,8 @@ Here are some of the projects I am working on:
 
 - **Time Series Analysis**: ARIMA, SARIMA models, and stationarity tests.
   
-  ![Time Series](https://images.cdn3.buscalibre.com/fit-in/360x360/5e/b1/5eb112c2e16a56e0491e5686a3f3ea73.jpg)
+  ![Time Series] (https://github.com/franksalomon/franksalomon/blob/main/978-1-4757-2526-1.jpeg)
+
 
   
 - **State-Space Models**: Kalman Filter and applications in data analysis.
