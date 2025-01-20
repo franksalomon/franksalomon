@@ -1,16 +1,38 @@
-  ## Hi there, I'm Frank👋
+# Hi, I'm Frank Salomón Sulca Palomino 👋
 
-<!--
-**franksalomon/franksalomon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to my GitHub profile! I'm a **Master's student in Mathematical Modeling, Statistics, and Computing** at the **University of Zaragoza** and the **University of the Basque Country**. I am currently focused on **time series analysis** and **state-space models**.
 
-Here are some ideas to get you started:
+## 📚 My Projects
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Here are some of the projects I am working on:
+
+- **Time Series Analysis**: ARIMA, SARIMA models, and stationarity tests.
+- **State-Space Models**: Kalman Filter and applications in data analysis.
+
+## 🧑‍💻 Languages and Technologies I Use
+
+- Python
+- R
+- LaTeX
+- Git & GitHub
+
+## 📫 How to Reach Me
+
+- Email: [fsulca001@ikasle.ehu.eus](mailto:fsulca001@ikasle.ehu.eus)
+- LinkedIn: [linkedin.com/in/franksalomonsulca](https://www.linkedin.com/in/franksalomonsulca)
+
+---
+
+### My Contributions:
+
+Check out some of the projects I have contributed to or created:
+
+- [Time Series Project](https://github.com/username/series-temporales)
+- [State-Space Models](https://github.com/username/modelos-espacio-estado)
+
+---
+
+🔭 I'm looking for opportunities to collaborate on data analysis, time series, or statistical modeling projects.
+
+<!-- Here you can include a GitHub stats graphic (optional) -->
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=franksalomonsulca&show_icons=true&count_private=true&hide=prs)
