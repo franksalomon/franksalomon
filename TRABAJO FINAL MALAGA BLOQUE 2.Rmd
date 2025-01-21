@@ -1,0 +1,629 @@
+---
+title: "Análisis de la Temperatura en Málaga (1960-2023)"
+subtitle: "Análisis de Series Temporales - MODELOS ESPACIO ESTADO "
+author: "Frank Salomón Sulca Palomino"
+date: "2024-11-24"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+```
+
+## Resumen
+
+### PREGUNTA 1: Representa graficamente la serie elegida. ¿Como ha sido su evolución a lo largo de estos años?
+
+Cargar Datos Primero, cargamos el archivo `.rdata` que contiene nuestro conjunto de datos.
+
+```{r, echo = TRUE}
+# Cargar el archivo .RData
+load("C:\\escritorio 18.12.24\\CURSOS UPV\\series temporales\\Temp.rdata")
+
+# Cargar las librerías necesarias
+library(dplyr)
+library(tseries)  # Para la prueba KPSS
+library(forecast) # Para ACF y PACF
+library(zoo)      # Para imputación de datos
+
+# Crear secuencia de mes/año y agregarla al data frame
+mes_año <- format(seq(from = as.Date("1960-01-01"), to = as.Date("2023-12-01"), by = "month"), "%m/%Y")
+Temp$mes_año <- mes_año
+
+# Seleccionar datos de Málaga
+library(dplyr)
+ciudad_df <- Temp %>% select(mes_año, MALAGA)
+ciudad_df$MALAGA <- as.numeric(ciudad_df$MALAGA)
+
+# Instalar y cargar el paquete
+library(imputeTS)
+
+# Crear la serie original y aplicar imputación estacional
+ts_original <- ts(ciudad_df$MALAGA, start = c(1960, 1), frequency = 12)
+
+# Mostrar los primeros 5 valores faltantes 
+na_values <- Temp[is.na(Temp$MALAGA), c("mes_año", "MALAGA")]
+head(na_values, 5)
+# Contar los valores NA en la columna MALAGA
+na_count <- sum(is.na(Temp$MALAGA))
+na_count
+
+ts_malaga <- na_seadec(ts_original)
+
+par(mfrow = c(2, 2))
+
+# Graficar serie original e imputada
+plot(ts_original, main = "Serie original sin imputar", col = "black", lwd = 2, xlab = "Tiempo", ylab = "Valor")
+grid()
+plot(ts_malaga, main = "Serie imputada (estacional)", col = "blue", lwd = 2, xlab = "Tiempo", ylab = "Valor")
+grid()
+
+# Descomposición usando STL
+descomp_stl <- stl(ts_malaga, s.window = "periodic")
+plot(descomp_stl)  # Mostrar la descomposición (tendencia, estacionalidad y residuos)
+
+```
+
+Se utilizó la función na_seadec() del paquete “forecast” para imputar los valores faltantes en la serie, ya que había 19 datos ausentes entre 1983 y 2001, de los cuales 10 eran consecutivos en 1990. Esta función descompone la serie en componentes estacionales, de tendencia y error, y utiliza las estimaciones estacionales para rellenar los valores faltantes, respetando los patrones cíclicos de la serie. Esto asegura que la imputación sea coherente con la estacionalidad, lo que es fundamental para mantener la precisión en el análisis
+
+La descomposición STL de la serie temporal muestra cómo ha sido la evolución de la temperatura mensual en Málaga desde 1960 hasta 2023. La serie original combina patrones de tendencia, estacionalidad y ruido. A través de la descomposición, se observa que la estacionalidad ha permanecido constante a lo largo del tiempo, con patrones recurrentes que reflejan los meses más cálidos y fríos del año. Esto indica que el comportamiento estacional no ha cambiado significativamente durante el periodo de análisis.
+
+En cuanto a la tendencia, se identifican varios periodos de interés. Desde 1960 hasta aproximadamente 1980, la tendencia muestra un leve aumento en las temperaturas promedio. Sin embargo, entre 1980 y 1990, se observa un aumento significativo, marcando un cambio importante en el nivel general de las temperaturas. A partir de 1990, la tendencia se estabiliza, aunque con algunas fluctuaciones periódicas. En años recientes, parece haber un ligero aumento en la tendencia, pero este no es tan marcado como el observado en los años 80.
+
+Finalmente, los residuos, que representan la variabilidad no explicada por la tendencia y la estacionalidad, muestran una magnitud relativamente constante a lo largo del tiempo. Esto sugiere que la descomposición captura bien la estructura principal de la serie y que no hay eventos extremos recurrentes que alteren significativamente el comportamiento general de las temperaturas. En resumen, la evolución de las temperaturas en Málaga refleja un aumento sostenido en las décadas pasadas, acompañado de una estacionalidad estable y una variabilidad residual controlada.
+
+### 2 . Identifica un modelo estructural de series temporales (MEST) que creas adecuado para describir el comportamiento de la serie. Justifica tu respuesta; haz las transformaciones previas que creas necesarias.
+
+```{r, echo = TRUE}
+
+# Modelo de nivel local (modelo de nivel local con la opción type="level".)
+ajuste.ll <- StructTS(x=ts_malaga, type="level")
+
+# Diagnóstico del modelo ajustado
+# Generación de diagnóstico del modelo
+tsdiag(ajuste.ll)
+head(ajuste.ll$residuals)
+
+# Análisis de residuos estandarizados
+# Creación de la ventana de residuos y su visualización
+residuos.estandarizados <- window(ajuste.ll$residuals, start=1960)
+plot(residuos.estandarizados, main="Residuos estandarizados")
+abline(h=0)
+abline(h=-1.96, col="blue", lty="dashed")
+abline(h=+1.96, col="blue", lty="dashed")
+
+# Cálculo de la media y desviación típica de los residuos
+media_residuos <- mean(residuos.estandarizados)
+desviacion_residuos <- sd(residuos.estandarizados)
+cbind(media_residuos, desviacion_residuos)
+
+# Análisis de CUSUM y CUSUMQ
+# Cálculo de CUSUM y CUSUMQ, incluyendo bandas de significación
+library(gdata)
+n_observaciones <- nobs(residuos.estandarizados)
+residuos_normalizados <- residuos.estandarizados / desviacion_residuos
+
+CUSUM <- ts(cumsum(residuos_normalizados), start=1960)
+CUSUMSQ <- ts(cumsum(residuos_normalizados^2) / sum(residuos_normalizados^2), start=1960)
+dd <- ts(sqrt(n_observaciones) * (1 + 2 * seq(from=1, to=n_observaciones) / n_observaciones), start=1960)
+
+par(mfrow=c(1,2))
+plot(CUSUM, main="CUSUM Residuos estandarizados y bandas 10%", ylim=c(-dd[n_observaciones], dd[n_observaciones]))
+lines(-0.85 * dd, col="blue", lty="dashed")
+lines(0.85 * dd, col="blue", lty="dashed")
+
+plot(CUSUMSQ, main="CUSUMQ Residuos estandarizados")
+lines(ts(seq(1:n_observaciones) / n_observaciones, start=1960), col="blue", lty="dashed")
+
+# Funciones ACF y PACF
+par(mfrow=c(2,1))
+acf(residuos.estandarizados, lag.max=25, main="ACF de Residuos")
+pacf(residuos.estandarizados, lag.max=25, main="PACF de Residuos")
+
+# Prueba de Ljung-Box
+# Generación de la tabla de valores p
+nlags <- 20
+LB <- matrix(nrow=nlags, ncol=3)
+colnames(LB) <- c("Lag", "Estadístico LB", "p-valor")
+for (i in c(1:nlags)) {
+  LBi <- Box.test(residuos.estandarizados, type='Ljung', lag=i, fitdf=1)
+  LB[i,] <- cbind(i, LBi$statistic, LBi$p.value)
+}
+LB
+
+# Comprobación de homocedasticidad de residuos
+nh <- round(n_observaciones / 3)
+GQ_stat <- sum(residuos.estandarizados[1:nh]^2) / sum(window(residuos.estandarizados, start=1960 - nh + 1)^2)
+if (GQ_stat < 1) { GQ_stat <- 1 / GQ_stat } 
+GQ_pval <- pf(GQ_stat, nh, nh, lower.tail=FALSE)
+cbind(GQ_stat, GQ_pval)
+
+head(ajuste.ll$residuals, n=12)
+ajuste.ll$coef
+
+# Prueba de Jarque-Bera
+library(tseries)
+jarque.bera.test(residuos.estandarizados)
+
+# Extracción de señales del modelo
+# Visualización de las señales suavizadas
+plot(ts_malaga)
+lines(fitted(ajuste.ll), col="red")
+lines(tsSmooth(ajuste.ll), col="green")
+
+# Predicción con el modelo de nivel local
+library(forecast)
+ts_malaga_predict <- forecast(ajuste.ll, h=12, lambda=NULL, biasadj=FALSE)
+ts_malaga_predict
+plot(ts_malaga_predict)
+
+# Cálculo del Error Cuadrático Medio (ECM)
+ECM <- mean(ajuste.ll$residuals^2)
+ECM
+
+
+#Modelo BSM: No requiere diferenciación previa de la serie, ya que está diseñado para manejar componentes de tendencia y estacionalidad directamente.
+#Modelo SSModel: Tampoco requiere diferenciación de la serie en principio, pero podría ser necesario si la serie tiene un comportamiento no estacionario severo que el modelo no captura adecuadamente.
+```
+
+```{r, echo = TRUE}
+# Librerías necesarias
+library(KFAS)
+library(forecast)
+
+# 1. Definición del modelo de tendencia lineal local
+ll_ts_malaga <- SSModel(ts_malaga ~
+                         SSMtrend(2, Q = list(NA, NA)),
+                         H = matrix(NA))
+
+ll_ts_malaga$Q
+ll_ts_malaga$H
+
+# 2. Ajuste del modelo
+fit_ts_malaga <- fitSSM(ll_ts_malaga, method = "BFGS", 
+                        init = c(2, 1, 1))
+
+fit_ts_malaga$optim.out
+
+ll_ts_malaga <- fit_ts_malaga$model
+
+# 3. Estimación de los estados del modelo
+fitll_ts_malaga <- KFS(ll_ts_malaga)
+
+# Gráfico de los estados estimados
+plot(fitll_ts_malaga$alphahat, main = "Estados estimados")
+
+# 4. Cálculo de errores estándar y bandas de confianza
+se_beta <- se_nivel <- numeric(nrow(fitll_ts_malaga$alphahat))
+for (i in seq_len(nrow(fitll_ts_malaga$alphahat))) {
+  se_beta[i] <- sqrt(fitll_ts_malaga$V[2, 2, i])
+  se_nivel[i] <- sqrt(fitll_ts_malaga$V[1, 1, i])
+}
+
+# Generación de series de bandas de confianza
+se_beta <- ts(se_beta, start = c(1960, 1), frequency = 12)
+bi <- fitll_ts_malaga$alphahat[, 2] - 1.64 * se_beta
+bs <- fitll_ts_malaga$alphahat[, 2] + 1.64 * se_beta
+
+# Gráfico de la pendiente con bandas de confianza
+ts.plot(fitll_ts_malaga$alphahat[, 2], bi, bs, lty = 1:1, col = c(1, 4, 4),
+        main = "Pendiente con bandas del 90%")
+
+se_nivel <- ts(se_nivel, start = c(1960, 1), frequency = 12)
+ci <- fitll_ts_malaga$alphahat[, 1] - 1.64 * se_nivel
+cs <- fitll_ts_malaga$alphahat[, 1] + 1.64 * se_nivel
+
+# Gráfico de la tendencia con bandas de confianza
+ts.plot(ts_malaga, fitll_ts_malaga$alphahat[, 1], ci, cs, lty = 1:1, col = c(1, 2, 4, 4),
+        main = "Tendencia con bandas del 90%")
+
+# 5. Análisis de residuos
+ll_resid <- rstandard(fitll_ts_malaga, type = "recursive")
+ll_resid <- window(ll_resid, start = 1960)
+
+# Cálculo de media y desviación estándar de residuos
+media_residuos <- mean(ll_resid, na.rm = TRUE)
+desviacion_residuos <- sd(ll_resid, na.rm = TRUE)
+cbind(media_residuos, desviacion_residuos)
+
+# Gráficos ACF y PACF de residuos
+acf(na.omit(ll_resid), main = "Autocorrelación de los residuos")
+pacf(na.omit(ll_resid), main = "Autocorrelación parcial de los residuos")
+
+# Prueba de Ljung-Box
+nlags <- 20
+LB <- matrix(nrow = nlags, ncol = 3)
+colnames(LB) <- c("Lag", "Estadístico LB", "p-valor")
+for (i in 1:nlags) {
+  LBi <- Box.test(ll_resid, type = 'Ljung', lag = i, fitdf = 1)
+  LB[i, ] <- c(i, LBi$statistic, LBi$p.value)
+}
+LB
+
+# 6. Predicción del modelo
+pred_ts_malaga <- predict(ll_ts_malaga, n.ahead = 12)
+
+# Gráfico de las predicciones
+ts.plot(ts_malaga, col = 1, lty = 1, main = "Predicción del modelo de tendencia lineal")
+lines(pred_ts_malaga, col = 4, lty = 1)
+
+# 7. Cálculo del Error Cuadrático Medio (ECM)
+ECM <- mean((na.omit(ll_resid))^2)
+ECM
+
+
+```
+
+```{r, echo = TRUE}
+
+# Modelo Estructural con Variables Ficticias
+# Cargar la librería KFAS
+library(KFAS)
+
+# Ajustar el modelo estructural con tendencia y estacionalidad (dummy)
+modelo_estructural_dummy <- SSModel(
+  ts_malaga ~ SSMtrend(degree = 2, Q = list(matrix(1), matrix(1))) +
+               SSMseasonal(period = 12, sea.type = "dummy", Q = 1),
+  H = NA  # Varianza del error observacional (estimada automáticamente)
+)
+
+
+# Estimación de la varianza y ajuste del modelo
+ajuste_modelo <- fitSSM(modelo_estructural_dummy, method = "BFGS", inits = c(1, 1, 1, 0.5))
+
+ajuste_modelo$model$Q
+
+# Ver los resultados de la optimización
+ajuste_modelo$optim.out
+
+# Calcular el filtro de Kalman y el suavizado
+KFS_modelo <- KFS(ajuste_modelo$model)    #KFSbsmd_UKgas <- KFS(bsmd_UKgas)
+
+
+# Ver los nombres de los componentes del objeto KFS
+names(KFS_modelo)
+
+# Obtener las innovaciones (residuos) del filtro de Kalman
+residuos <- KFS_modelo$v
+
+
+# Ver los primeros valores de los residuos
+head(residuos)
+
+
+KFS_modelo$d
+
+
+# Calcular los errores estándar recursivos
+residuos_estandarizados <- rstandard(KFS_modelo, type = "recursive")
+
+# Ver los primeros valores de los errores estándar recursivos
+head(residuos_estandarizados)
+
+
+# Graficar los errores estándar recursivos
+plot(residuos_estandarizados, type = "l", col = "blue", main = "Errores Estándar Recursivos", ylab = "Errores Estandarizados", xlab = "Tiempo")
+
+# Comparar residuos observados con los residuos calculados por el modelo
+plot(residuos, type = "l", col = "red", main = "Comparación de Residuos Observados y Predicción", ylab = "Residuos", xlab = "Tiempo")
+lines(residuos_estandarizados, col = "blue")
+legend("topright", legend = c("Observados", "Predicción"), col = c("red", "blue"), lty = 1)
+
+
+# Calcular la desviación estándar de los residuos
+sd_resid <- sd(residuos_estandarizados, na.rm = TRUE)
+sd_resid
+
+
+# Graficar los residuos estandarizados
+plot(residuos_estandarizados, main = "Residuos Estándar Recursivos", 
+     ylab = "Residuos", xlab = "Tiempo", type = "l")
+
+# Añadir una línea en 0 (media de los residuos)
+abline(h = 0, col = "red")
+
+# Añadir las líneas de las bandas de confianza al 95% (±1.96)
+abline(h = -1.96, col = "blue", lty = "dashed")
+abline(h = +1.96, col = "blue", lty = "dashed")
+
+# Cálculo de ACF y PACF de los residuos estandarizados
+acf_e <- acf(residuos_estandarizados, lag.max = 30, na.action = na.pass)
+pacf_e <- pacf(residuos_estandarizados, lag.max = 30, na.action = na.pass)
+
+# Mostrar resultados de ACF y PACF
+cbind(pacf_e$lag, acf_e$acf[2:31], pacf_e$acf, 1.96/sqrt(acf_e$n.used))
+
+# Realizar el contraste de Ljung-Box para los residuos
+nlags = 20
+LB = matrix(nrow = nlags, ncol = 4)
+colnames(LB) = c("lag", "LB-stat", "p-value", "grados lib")
+
+for (i in 1:nlags) {
+  LBi <- Box.test(residuos_estandarizados, type = 'Ljung', lag = i, fitdf = 1)
+  LB[i,] = cbind(i, LBi$statistic, LBi$p.value, LBi$parameter)
+}
+
+# Mostrar los resultados del contraste Ljung-Box
+LB
+
+
+# Cargar la librería necesaria
+library(gdata)
+
+residuos_estandarizados <- na.omit(residuos_estandarizados)
+
+# Determinar el tamaño de la serie de residuos estandarizados después de eliminar las 'd' observaciones
+n = nobs(residuos_estandarizados)
+nh = round(n / 3)  # Tamaño de la primera submuestra
+print(nh)
+
+# Definir el comienzo de la segunda submuestra
+nc2 = n - nh + 1
+
+# Verificar que los índices no tengan valores NA
+if (any(is.na(residuos_estandarizados))) {
+  stop("Hay valores NA en los residuos estandarizados. Por favor, revisa los datos.")
+}
+
+# Calcular el estadístico GQ
+GQ_stat = sum(residuos_estandarizados[nc2:n]^2, na.rm = TRUE) / sum(residuos_estandarizados[1:nh]^2, na.rm = TRUE)
+
+# Asegurarnos de que GQ_stat no sea NA
+if (is.na(GQ_stat)) {
+  stop("El cálculo del estadístico GQ ha producido un valor NA. Revisa los datos.")
+}
+
+# Modificar GQ_stat si es menor que 1
+if (GQ_stat < 1) {
+  GQ_stat = 1 / GQ_stat
+}
+
+# Calcular el valor p de GQ
+GQ_pval = pf(GQ_stat, nh, nh, lower.tail = FALSE)
+
+# Mostrar el estadístico GQ y el valor p
+cbind(GQ_stat, GQ_pval)
+
+# Cargar la librería necesaria
+library(tseries)
+
+# Realizar la prueba de Jarque-Bera sobre los residuos estandarizados
+jarque_bera_resultado <- jarque.bera.test(residuos_estandarizados)
+
+# Mostrar los resultados de la prueba
+jarque_bera_resultado
+
+# Calcular el Error Cuadrático Medio (ECM)
+ecm <- mean(residuos_estandarizados^2)
+print(paste("El Error Cuadrático Medio (ECM) es:", ecm))
+
+
+```
+El modelo estructural con componentes estacionales y tendencia es el más adecuado para describir la serie temporal de temperaturas de Málaga, ya que captura tanto la variabilidad estacional como la tendencia subyacente en los datos. El ajuste del modelo muestra una varianza de la tendencia de 1.3161 y una varianza de la estacionalidad de 1.3500, lo que indica que el modelo explica tanto las fluctuaciones estacionales como las tendencias de largo plazo. A pesar de que algunos residuos presentan autocorrelación significativa (como se muestra en los gráficos ACF y PACF), este modelo es más robusto que los otros modelos analizados, como el de nivel local o la tendencia lineal local, los cuales no capturan adecuadamente la estacionalidad y la dependencia temporal.
+
+Por ejemplo, en el modelo de nivel local, los residuos presentan autocorrelación significativa según la prueba de Ljung-Box (valor p cercano a 0), lo que sugiere que no se ha capturado correctamente la dependencia temporal, mientras que en el modelo de tendencia lineal local, aunque la pendiente es estimada como 2.89, los residuos aún muestran autocorrelación y no se incorporan las fluctuaciones estacionales. En comparación, el modelo estructural con componentes estacionales logra una mayor precisión al capturar la estacionalidad mensual con una mayor adecuación a los datos, como lo reflejan las estimaciones de las componentes estacionales (por ejemplo, la estimación para enero es -0.0421).
+
+
+
+### 3. Estima el modelo que has propuesto en el apartado anterior y presenta sus resultados (las estimaciones de las varianzas y los componentes de la serie en el ultimo mes). Preferiblemente, usa la librerıa KFAS.
+```{r, echo = TRUE}
+
+# Extraer los componentes
+tendencia_stl <- tail(descomp_stl$time.series[, "trend"], 1)
+estacionalidad_stl <- tail(descomp_stl$time.series[, "seasonal"], 1)
+residuo_stl <- tail(descomp_stl$time.series[, "remainder"], 1)
+
+
+# Mostrar los componentes del último mes
+tendencia_stl
+estacionalidad_stl
+residuo_stl
+```
+El análisis de los residuos muestra que el modelo tiene una estimación adecuada de la varianza. El GQ test arroja un valor p de 0.3749917, lo que indica que no hay autocorrelación significativa en los residuos, sugiriendo que la varianza del modelo es constante. Además, el Jarque-Bera test tiene un valor p de 0.2682, lo que sugiere que los residuos siguen una distribución normal. Estos resultados respaldan la idea de que los residuos no presentan patrones sistemáticos, lo que es un buen indicio de que el modelo está bien especificado y ajustado.
+
+En cuanto a los residuos estandarizados, no se observa evidencia de heterocedasticidad ni de autocorrelación. El hecho de que el valor p del GQ test sea mayor a 0.05 (0.3749917) y el valor p del Jarque-Bera test también sea mayor a 0.05 (0.2682) confirma que los residuos son aproximadamente normales y no están autocorrelacionados, lo que sugiere que la varianza estimada es adecuada y que el modelo ha capturado correctamente la variabilidad de los datos.
+
+### Estima los componentes de la serie con el modelo que has elegido finalmente usando el m´etodo con menor error cuadr´atico medio. Haz el gr´afico de los componentes con sus intervalos de confianza del 90 %.
+```{r, echo = TRUE}
+# Cargar las librerías necesarias
+library(KFAS)
+
+# Suavizados
+
+plot(KFS_modelo$alphahat[, 1:2])
+
+# Graficar la serie temporal, la tendencia suavizada y la filtrada (sin logaritmo)
+ts.plot(ts_malaga, 
+        KFS_modelo$alphahat[,1], 
+        KFS_modelo$att[,1], 
+        lty = 1:1, 
+        col = c(1, 2, 4),
+        main = "Serie y tendencia: Málaga",
+        ylab = "Valor de la serie",
+        xlab = "Tiempo")
+
+# Agregar leyenda
+legend("topright", 
+       legend = c("Serie Original", "Tendencia Suavizada", "Tendencia Filtrada"), 
+       col = c(1, 2, 4), 
+       lty = 1:1)
+
+# Extraer señales de nivel (tendencia)
+levelbsm_malaga <- signal(KFS_modelo, states = c("level"))
+
+# Extraer varianza de nivel
+Vlevel_bsm_malaga <- ts(as.matrix(levelbsm_malaga$variance),
+                        freq = frequency(ts_malaga), 
+                        start = c(start(ts_malaga)[1], start(ts_malaga)[2]))
+
+# Señales de nivel
+levelbsm_malaga <- levelbsm_malaga$signal
+
+# Extraer señales de estacionalidad
+seasbsm_malaga <- signal(KFS_modelo, states = c("seasonal"))
+
+# Extraer varianza de estacionalidad
+Vseas_bsm_malaga <- ts(as.matrix(seasbsm_malaga$variance),
+                       freq = frequency(ts_malaga), 
+                       start = c(start(ts_malaga)[1], start(ts_malaga)[2]))
+
+# Señales de estacionalidad
+seasbsm_malaga <- seasbsm_malaga$signal
+
+
+# Graficar las señales de nivel con intervalos de confianza
+par(mfrow = c(1, 2))  # Organizar los gráficos en 2 columnas
+
+# Graficar tendencia: suavizado
+ts.plot(levelbsm_malaga, 
+        main = "Tendencia: suavizado", 
+        col = "blue", 
+        ylab = "Valor de la tendencia", 
+        xlab = "Tiempo")
+lines(levelbsm_malaga - 1.96 * sqrt(Vlevel_bsm_malaga), col = "grey", lty = 1)
+lines(levelbsm_malaga + 1.96 * sqrt(Vlevel_bsm_malaga), col = "grey", lty = 1)
+
+# Graficar estacionalidad: suavizado
+ts.plot(seasbsm_malaga, 
+        main = "Estacionalidad: suavizado", 
+        col = "blue", 
+        ylab = "Valor de la estacionalidad", 
+        xlab = "Tiempo")
+lines(seasbsm_malaga - 1.96 * sqrt(Vseas_bsm_malaga), col = "grey", lty = 1)
+lines(seasbsm_malaga + 1.96 * sqrt(Vseas_bsm_malaga), col = "grey", lty = 1)
+
+par(mfrow = c(1, 1))  # Restablecer a una sola gráfica
+
+# Graficar serie original junto con las componentes de tendencia y estacionalidad
+ts.plot(ts_malaga, 
+        levelbsm_malaga, 
+        seasbsm_malaga, 
+        lty = 1:1, 
+        col = c(1, 2, 4),
+        main = "Serie, Tendencia y Estacionalidad",
+        ylab = "Valor de la serie",
+        xlab = "Tiempo")
+
+# Agregar leyenda
+legend("topright", 
+       legend = c("Serie Original", "Tendencia Suavizada", "Estacionalidad Suavizada"), 
+       col = c(1, 2, 4), 
+       lty = 1:1)
+
+
+
+```
+
+ El modelo con variables ficticias incluye una especificación estacional explícita mediante variables dummy, lo que le permite ajustar directamente las fluctuaciones de la serie debido a los efectos estacionales. Dado que la serie de temperaturas mensuales tiene un componente estacional fuerte, este modelo es capaz de capturar esos efectos de manera más precisa, a diferencia de los otros modelos (nivel local y tendencia lineal local), que no modelan de manera tan eficiente la estacionalidad.
+
+El modelo con variables ficticias también tiene la capacidad de ajustarse a tendencias no lineales, algo que el modelo de nivel local no puede hacer.
+
+Los residuos del modelo con variables ficticias mostraron una distribución más cercana a la normalidad en comparación con los residuos de los modelos de nivel local y  tendencia lineal local Además, no mostraron signos tan evidentes de autocorrelación o heterocedasticidad, lo que sugiere que este modelo es el más adecuado para los datos,desde el punto de vista de los residuos.
+
+```{r, echo = TRUE}
+# Predicción para los próximos 12 meses con el modelo modelo_estructural_dummy
+# Realizar las predicciones para los próximos 12 meses
+pred_malaga <- predict(ajuste_modelo$model, n.ahead = 12, interval = "prediction", level = 0.9)
+
+
+
+# Predicción de la tendencia para los próximos 12 meses
+pred_tendencia <- predict(ajuste_modelo$model, n.ahead = 12, interval = "prediction", level = 0.9, state = "level")
+str(pred_tendencia)
+# Predicción de la estacionalidad para los próximos 12 meses
+pred_estacionalidad <- predict(ajuste_modelo$model, n.ahead = 12, interval = "prediction", level = 0.9, state = "seasonal")
+
+# Extraer la predicción central, límite inferior y límite superior
+pred_values <- pred_malaga[, "fit"]  # Predicción central
+lwr_values <- pred_malaga[, "lwr"]   # Límite inferior
+upr_values <- pred_malaga[, "upr"]   # Límite superior
+
+
+# Extraer la predicción de la tendencia (ajuste)
+tendencia_fit <- pred_tendencia[, "fit"]
+
+# Extraer los límites inferior y superior
+tendencia_lwr <- pred_tendencia[, "lwr"]
+tendencia_upr <- pred_tendencia[, "upr"]
+
+# Graficar la serie original junto con la predicción de los próximos 12 meses
+ts.plot(ts_malaga, 
+        pred_values, 
+        lty = 1:1, 
+        col = c(1, 2), 
+        main = "Predicción para los Próximos 12 Meses", 
+        ylab = "Valor de la serie",
+        xlab = "Tiempo")
+
+# Agregar los intervalos de predicción (de 90%)
+lines(pred_values + 1.96 * (upr_values - pred_values), col = "grey", lty = 2)
+lines(pred_values - 1.96 * (pred_values - lwr_values), col = "grey", lty = 2)
+
+# Leyenda
+legend("topright", 
+       legend = c("Serie Original", "Predicción", "Intervalo de Confianza (90%)"), 
+       col = c(1, 2, "grey"), 
+       lty = 1:2)
+
+# Graficar la predicción de la tendencia (ajuste)
+ts.plot(tendencia_fit, 
+        main = "Predicción de la Tendencia (Próximos 12 Meses)", 
+        col = "blue", 
+        ylab = "Valor de la Tendencia", 
+        xlab = "Tiempo")
+
+# Agregar los intervalos de confianza (límites inferior y superior)
+lines(tendencia_lwr, col = "grey", lty = 2)
+lines(tendencia_upr, col = "grey", lty = 2)
+# Extraer las predicciones de cada componente de la serie
+pred_original <- pred_malaga[, 1]  # Acceder a la primera columna, que contiene las predicciones originales
+pred_tendencia <- pred_tendencia  # Ya es un vector, así que simplemente lo asignamos
+pred_estacionalidad <- pred_estacionalidad  # Lo mismo aquí, es un vector
+
+
+# Crear el data frame con las predicciones para los próximos 12 meses
+pred_df <- data.frame(
+  Mes = seq(from = 2024, by = 1/12, length.out = 12),  # Generar los 12 meses de predicción
+  Predicción_Original = pred_original,
+  Predicción_Tendencia = pred_tendencia,
+  Predicción_Estacionalidad = pred_estacionalidad
+)
+
+# Mostrar el data frame
+print(pred_df)
+
+
+# Crear un gráfico con la serie original, tendencia y estacionalidad
+par(mfrow = c(3, 1))  # Dividir el gráfico en 3 filas para mostrar las 3 series
+
+# Graficar la serie original
+ts.plot(pred_original, main = "Predicción Original (Próximos 12 Meses)", 
+        col = "blue", ylab = "Valor Original", xlab = "Tiempo", type = "o")
+
+# Graficar la tendencia
+ts.plot(pred_tendencia, main = "Predicción de la Tendencia (Próximos 12 Meses)", 
+        col = "red", ylab = "Valor de la Tendencia", xlab = "Tiempo", type = "o")
+
+# Graficar la estacionalidad
+ts.plot(pred_estacionalidad, main = "Predicción de la Estacionalidad (Próximos 12 Meses)", 
+        col = "green", ylab = "Valor de la Estacionalidad", xlab = "Tiempo", type = "o")
+
+# Restaurar configuración de gráficos
+par(mfrow = c(1, 1))
+
+
+# Graficar las tres series en un solo gráfico
+ts.plot(pred_original, pred_tendencia, pred_estacionalidad,
+        main = "Predicción Original, Tendencia y Estacionalidad (Próximos 12 Meses)", 
+        col = c("blue", "red", "green"),
+        ylab = "Valor", xlab = "Tiempo", type = "o", lty = 1:3)
+
+# Añadir una leyenda para identificar cada serie
+legend("topright", legend = c("Original", "Tendencia", "Estacionalidad"),
+       col = c("blue", "red", "green"), lty = 1:3)
+
+
+```
+
