@@ -37,5 +37,4 @@ Check out some of the projects I have contributed to or created:
 
 🔭 I'm looking for opportunities to collaborate on data analysis, time series, or statistical modeling projects.
 
-<!-- Here you can include a GitHub stats graphic (optional) -->
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=franksalomonsulca&show_icons=true&count_private=true&hide=prs)
+
