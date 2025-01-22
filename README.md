@@ -30,8 +30,9 @@ Here are some of the projects I am working on:
 Check out some of the projects I have contributed to or created:
 
 - [Time Series Project](https://franksalomon.github.io/rmaarkdown1/)
-- [State-Space Models](https://github.com/username/modelos-espacio-estado)
-https://franksalomon.github.io/rmaarkdown1/
+- [State-Space Models](https://franksalomon.github.io/State-Space-Models/)
+
+
 ---
 
 🔭 I'm looking for opportunities to collaborate on data analysis, time series, or statistical modeling projects.
