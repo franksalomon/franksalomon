@@ -29,7 +29,7 @@ Here are some of the projects I am working on:
 
 Check out some of the projects I have contributed to or created:
 
-- [Time Series Project](https://franksalomon.github.io/rmaarkdown1/)
+- [Time Series Project](https://franksalomon.github.io/time-series/)
 - [State-Space Models](https://franksalomon.github.io/State-Space-Models/)
 
 
