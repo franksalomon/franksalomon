@@ -18,7 +18,7 @@ Frank Salomón Sulca Palomino</a></h1>
   - [Time Series Analysis](https://franksalomon.github.io/time-series/)  
   - [State-Space Models](https://franksalomon.github.io/State-Space-Models/)
 
-- 🌟 Looking for opportunities in **data analysis, time series, or statistical modeling**
+- 🌟 Looking for opportunities in **data analysis, time series analysis, statistical modeling, or machine learning **
 
 ### 📝 Languages and Technologies
 
