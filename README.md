@@ -24,7 +24,10 @@ Frank Salomón Sulca Palomino</a></h1>
 
 - Python  
 - R  
-- LaTeX  
+- LaTeX
+- MySQL
+- MATLAB
+- Desarrollo en Java (NetBeans)
 - Git & GitHub  
 
 <h3 align="center">Connect with me 🤝</h3>
