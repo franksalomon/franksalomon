@@ -9,26 +9,37 @@ Frank Salomón Sulca Palomino</a></h1>
 </a>
 
 - 🎓 I’m currently studying at the **University of Zaragoza** and the **University of the Basque Country**
-
 - 🔬 My main focus: **Time Series Analysis** & **State-Space Models**
-
 - 🎨 I’m working with **ARIMA, SARIMA models, stationarity tests, and Kalman Filter**
 
-- 📈 Check out my projects:  
-  - [Time Series Analysis](https://franksalomon.github.io/time-series/)  
-  - [State-Space Models](https://franksalomon.github.io/State-Space-Models/)
+### 📈 Proyectos Destacados
 
-- 🌟 Looking for opportunities in **data analysis, time series analysis, statistical modeling, or machine learning **
+- [Time Series Analysis](https://franksalomon.github.io/time-series/): Análisis de series temporales utilizando modelos ARIMA y SARIMA, incluyendo pruebas de estacionariedad y predicción de datos.
+- [State-Space Models](https://franksalomon.github.io/State-Space-Models/): Implementación de modelos de espacio de estados con el Filtro de Kalman para la estimación y predicción de series temporales.
 
-### 📝 Languages and Technologies
+### 🛠️ Habilidades Técnicas
 
-- Python  
-- R  
-- LaTeX
-- MySQL
-- MATLAB
-- Desarrollo en Java (NetBeans)
-- Git & GitHub  
+- **Lenguajes de Programación**: Python, R, Java, MATLAB
+- **Bases de Datos**: MySQL
+- **Herramientas de Desarrollo**: Git, GitHub, LaTeX
+- **Modelado Estadístico**: ARIMA, SARIMA, Filtro de Kalman, Análisis de Series Temporales
+
+### 📚 Educación
+
+- **Master en Modelización Matemática, Estadística y Computación**  
+  Universidad de Zaragoza y Universidad del País Vasco  
+  *Enfoque en Análisis de Series Temporales y Modelos de Espacio de Estados*
+
+### 💼 Experiencia
+
+- **Asistente de Investigación**  
+  Universidad de Zaragoza  
+  *Desarrollo de modelos predictivos para series temporales en proyectos de investigación.*
+
+### 🔍 Buscando Oportunidades
+
+- **Roles**: Científico de Datos, Analista de Series Temporales, Investigador en Modelado Estadístico
+- **Proyectos**: Análisis de datos, Modelado predictivo, Machine Learning aplicado a series temporales
 
 <h3 align="center">Connect with me 🤝</h3>
 
