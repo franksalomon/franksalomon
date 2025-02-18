@@ -16,6 +16,7 @@ Frank Salomón Sulca Palomino</a></h1>
 
 - [Time Series Analysis](https://franksalomon.github.io/time-series/): Análisis de series temporales utilizando modelos ARIMA y SARIMA, incluyendo pruebas de estacionariedad y predicción de datos.
 - [State-Space Models](https://franksalomon.github.io/State-Space-Models/): Implementación de modelos de espacio de estados con el Filtro de Kalman para la estimación y predicción de series temporales.
+- [Mi Proyecto Java](https://github.com/franksalomon/mi-proyecto-java)**: Implementación de una clase `Matriz` para operaciones matriciales y una aplicación GUI para gestionar una base de datos bibliográfica. Incluye manejo de excepciones, validación de datos y conexión a MySQL.
 
 ### 🛠️ Habilidades Técnicas
 
