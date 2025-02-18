@@ -12,35 +12,35 @@ Frank Salomón Sulca Palomino</a></h1>
 - 🔬 My main focus: **Time Series Analysis** & **State-Space Models**
 - 🎨 I’m working with **ARIMA, SARIMA models, stationarity tests, and Kalman Filter**
 
-### 📈 Proyectos Destacados
+### 📈 Featured Projects
 
-- [Time Series Analysis](https://franksalomon.github.io/time-series/): Análisis de series temporales utilizando modelos ARIMA y SARIMA, incluyendo pruebas de estacionariedad y predicción de datos.
-- [State-Space Models](https://franksalomon.github.io/State-Space-Models/): Implementación de modelos de espacio de estados con el Filtro de Kalman para la estimación y predicción de series temporales.
-- [Mi Proyecto Java](https://github.com/franksalomon/mi-proyecto-java)**: Implementación de una aplicación GUI para gestionar una base de datos bibliográfica. Incluye manejo de excepciones, validación de datos y conexión a MySQL.
+- [Time Series Analysis](https://franksalomon.github.io/time-series/): Analysis of time series using ARIMA and SARIMA models, including stationarity tests and data forecasting.
+- [State-Space Models](https://franksalomon.github.io/State-Space-Models/): Implementation of state-space models with the Kalman Filter for time series estimation and forecasting.
+- [My Java Project](https://github.com/franksalomon/mi-proyecto-java): Implementation of a GUI application to manage a bibliographic database. Includes exception handling, data validation, and MySQL connection.
 
-### 🛠️ Habilidades Técnicas
+### 🛠️ Technical Skills
 
-- **Lenguajes de Programación**: Python, R, Java, MATLAB
-- **Bases de Datos**: MySQL
-- **Herramientas de Desarrollo**: Git, GitHub, LaTeX
-- **Modelado Estadístico**: ARIMA, SARIMA, Filtro de Kalman, Análisis de Series Temporales
+- **Programming Languages**: Python, R, Java, MATLAB
+- **Databases**: MySQL
+- **Development Tools**: Git, GitHub, LaTeX
+- **Statistical Modeling**: ARIMA, SARIMA, Kalman Filter, Time Series Analysis
 
-### 📚 Educación
+### 📚 Education
 
-- **Master en Modelización Matemática, Estadística y Computación**  
-  Universidad de Zaragoza y Universidad del País Vasco  
-  *Enfoque en Análisis de Series Temporales y Modelos de Espacio de Estados*
+- **Master's in Mathematical Modeling, Statistics, and Computing**  
+  University of Zaragoza and University of the Basque Country  
+  *Focus on Time Series Analysis and State-Space Models*
 
-### 💼 Experiencia
+### 💼 Experience
 
-- **Asistente de Investigación**  
-  Universidad de Zaragoza  
-  *Desarrollo de modelos predictivos para series temporales en proyectos de investigación.*
+- **Research Assistant**  
+  University of Zaragoza  
+  *Development of predictive models for time series in research projects.*
 
-### 🔍 Buscando Oportunidades
+### 🔍 Looking for Opportunities
 
-- **Roles**: Científico de Datos, Analista de Series Temporales, Investigador en Modelado Estadístico
-- **Proyectos**: Análisis de datos, Modelado predictivo, Machine Learning aplicado a series temporales
+- **Roles**: Data Scientist, Time Series Analyst, Statistical Modeling Researcher
+- **Projects**: Data analysis, Predictive modeling, Machine Learning applied to time series
 
 <h3 align="center">Connect with me 🤝</h3>
 
