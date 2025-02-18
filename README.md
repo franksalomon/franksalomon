@@ -33,9 +33,10 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ### 💼 Experience
 
-- **Research Assistant**  
-  University of Zaragoza  
-  *Development of predictive models for time series in research projects.*
+- **Student Researcher (Academic Projects)**
+  University of the Basque Country
+  Developed predictive models for time series as part of academic projects, focusing on ARIMA, SARIMA, and Kalman Filter applications.
+
 
 ### 🔍 Looking for Opportunities
 
