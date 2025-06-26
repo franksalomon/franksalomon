@@ -17,8 +17,8 @@ Frank Salomón Sulca Palomino</a></h1>
 <h3>📈 Featured Projects</h3>
 <ul>
   <li>
-    <a href="https://github.com/franksalomon/time-series/blob/main/Serie%20temporales/Series_Temporales__Trabajo_Bloque_1.pdf" target="_blank">
-      [Time Series Analysis]
+    <a href="https://github.com/franksalomon/time-series/blob/main/Series_Temporales_Bloque1.pdf" target="_blank">
+      Time Series Analysis
     </a>: Analysis of time series using ARIMA and SARIMA models, including stationarity tests and forecasting.
   </li>
 </ul>
