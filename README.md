@@ -24,7 +24,7 @@ Frank Salomón Sulca Palomino</a></h1>
 </ul>
 <ul>
   <li>
-      <a href="https://github.com/franksalomon/Structural-Time-Series-Models/blob/main/MEST.pdf" target="_blank">
+      <a href="https://github.com/franksalomon/Structural-Time-Series-Models/blob/main/MEST_Bloque_2.pdf" target="_blank">
       State-Space Models
     </a>: Implementation of state-space models with the Kalman Filter for time series estimation and forecasting.
   </li>
