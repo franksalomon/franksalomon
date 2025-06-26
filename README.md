@@ -40,7 +40,17 @@ Frank Salomón Sulca Palomino</a></h1>
 - **Programming Languages**: Python, R, Java, MATLAB
 - **Databases**: MySQL
 - **Development Tools**: Git, GitHub, LaTeX
-- **Statistical Modeling & ML**: Python (scikit-learn, statsmodels, pmdarima), R (caret, forecast), state-space and time-series analysis
+- **Statistical Modeling & ML**: Principal Component Analysis (PCA), stochastic demand forecasting, Poisson regression.
+
+
+
+
+
+
+
+
+
+
 
 
 
