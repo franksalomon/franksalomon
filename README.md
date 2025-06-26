@@ -17,6 +17,13 @@ Frank Salomón Sulca Palomino</a></h1>
 🎨 I use ARIMA, SARIMA models, stationarity tests, and the Kalman Filter
 
 ### 📈 Featured Projects
+<ul>
+  <li>
+    <a href="https://franksalomon.github.io/Machine-Learning-Models/" target="_blank">
+      Machine Learning Models
+    </a>: Implementation of three supervised classification algorithms: Decision Tree, Random Forest, and K-Nearest Neighbors (KNN), with performance evaluation using accuracy, confusion matrix, and cross-validation.
+  </li>
+</ul>
 
 <ul>
   <li>
