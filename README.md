@@ -44,10 +44,10 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ### 🛠️ Technical Skills
 
-- **Programming Languages**: Python, R, Java, MATLAB
-- **Databases**: MySQL, Excel
-- **Development Tools**: Git, GitHub, LaTeX
-- **Statistical Modeling & ML**: Principal Component Analysis (PCA), stochastic demand forecasting, Poisson regression.
+- **Programming Languages**: Python, R, Java, MATLAB  
+- **Databases**: MySQL, Excel  
+- **Development Tools**: Git, GitHub, LaTeX  
+- **Statistical & ML Techniques**: PCA, stochastic models, Poisson regression
 
 
 
