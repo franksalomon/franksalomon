@@ -18,7 +18,6 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ### 📈 Featured Projects
 
-<h3>📈 Featured Projects</h3>
 <ul>
   <li>
     <a href="https://github.com/franksalomon/time-series/blob/main/Series_Temporales_Bloque1.pdf" target="_blank">
