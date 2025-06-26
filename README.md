@@ -40,7 +40,17 @@ Frank Salomón Sulca Palomino</a></h1>
 - **Programming Languages**: Python, R, Java, MATLAB
 - **Databases**: MySQL
 - **Development Tools**: Git, GitHub, LaTeX
-- **Statistical Modeling & ML**: Machine learning (scikit-learn, caret), logistic regression, decision trees, random forest, state-space time series
+- **Statistical Modeling & ML**: Python (scikit-learn, statsmodels, pmdarima), R (caret, forecast), state-space and time-series analysis
+
+
+
+
+
+
+
+
+
+
 
 
 
