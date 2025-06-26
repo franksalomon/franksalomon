@@ -9,7 +9,9 @@ Frank Salomón Sulca Palomino</a></h1>
 </a>
 
 -🎓 I’m currently studying at the **University of Zaragoza** and the **University of the Basque Country**
+
 -🔬 My main focus is **Time Series Analysis** and **State-Space Models**, complemented by **Machine Learning techniques** such as logistic regression, decision trees, and random forest
+
 -🎨 I’m working with **ARIMA**, **SARIMA** models, stationarity tests, and the **Kalman Filter**
 
 ### 📈 Featured Projects
