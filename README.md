@@ -14,7 +14,14 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ### 📈 Featured Projects
 
-- [[Time Series Analysis])](https://github.com/tuusuario/turepo/blob/main/documento.pdf): Analysis of time series using ARIMA and SARIMA models, including stationarity tests and data forecasting.
+<h3>📈 Featured Projects</h3>
+<ul>
+  <li>
+    <a href="https://github.com/franksalomon/time-series/blob/main/Serie%20temporales/Series_Temporales__Trabajo_Bloque_1.pdf" target="_blank">
+      [Time Series Analysis]
+    </a>: Analysis of time series using ARIMA and SARIMA models, including stationarity tests and forecasting.
+  </li>
+</ul>
 - [State-Space Models](https://franksalomon.github.io/State-Space-Models/): Implementation of state-space models with the Kalman Filter for time series estimation and forecasting.
 - [My Java Project](https://github.com/franksalomon/mi-proyecto-java): Implementation of a GUI application to manage a bibliographic database. Includes exception handling, data validation, and MySQL connection.
 
