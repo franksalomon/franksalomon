@@ -73,7 +73,6 @@ Frank Salomón Sulca Palomino</a></h1>
 
 - **Master's in Mathematical Modeling, Statistics, and Computing**  
   University of Zaragoza and University of the Basque Country  
-  *Focus on Time Series Analysis and State-Space Models*
 
 ### 💼 Experience
 
@@ -85,7 +84,7 @@ Frank Salomón Sulca Palomino</a></h1>
 ### 🔍 Looking for Opportunities
 
 - **Roles**: Data Scientist, Time Series Analyst, Statistical Modeling Researcher
-- **Projects**: Data analysis, Predictive modeling, Machine Learning applied to time series
+- **Projects**: Data analysis, Predictive modeling, Machine Learning 
 
 <h3 align="center">Connect with me 🤝</h3>
 
