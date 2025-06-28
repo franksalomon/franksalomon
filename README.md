@@ -78,6 +78,7 @@ Frank Salomón Sulca Palomino</a></h1>
 
 - **Student Researcher (Academic Projects)**
 *University of the Basque Country*
+
 Conducted time series forecasting using ARIMA, SARIMA, and Kalman Filter models. Focused on analyzing temporal patterns and improving prediction accuracy in academic research settings.
 
 
