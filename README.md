@@ -12,8 +12,6 @@ Frank Salomón Sulca Palomino</a></h1>
 
 🤖 My main focus: Leveraging advanced data science and machine learning methods, such as logistic regression, decision trees, and random forests, to enhance IT audit processes and enable data-driven insights.
 
-🔬 I’m currently learning and applying Time Series Analysis techniques
-
 🎨 I’ve explored models such as ARIMA and SARIMA, and I’m getting familiar with the Kalman Filter and state-space models
 
 ### 📈 Featured Projects
