@@ -14,7 +14,7 @@ Frank Salomón Sulca Palomino</a></h1>
       <h3>🎓 About Me / Sobre mí</h3>
       <ul>
         <li> I’m finishing my master’s studies at the University of Zaragoza and the University of the Basque Country.</li>
-        <li> My main focus is utilizing advanced data science and machine learning methodologies, such as logistic regression, decision trees, and random forests, to enhance processes and enable data-driven insights across various industries.</li>
+        <li> Focused on data science and machine learning methods like logistic regression, decision trees, and random forests.</li>
         <li> I’ve explored models such as ARIMA and SARIMA, and I’m getting familiar with the Kalman Filter and state-space models.</li>
       </ul>
     </td>
@@ -23,6 +23,29 @@ Frank Salomón Sulca Palomino</a></h1>
     </td>
   </tr>
 </table>
+
+---
+
+## 📈 Featured Projects / Proyectos Destacados
+
+### 🧠 Machine Learning Models  
+🇬🇧 Implementation of Decision Tree, Random Forest, KNN with performance evaluation  
+🇪🇸 Implementación de Árbol de Decisión, Bosques Aleatorios, KNN  
+🔗 [View project](https://franksalomon.github.io/Machine-Learning-Models/)
+
+### ⏳ Time Series Analysis / Análisis de Series Temporales  
+🇬🇧 Forecasting with ARIMA and SARIMA, stationarity tests  
+🇪🇸 Pronóstico con ARIMA y SARIMA, pruebas de estacionariedad  
+🔗 [Read PDF](https://github.com/franksalomon/time-series/blob/main/Series_Temporales_Bloque1.pdf)
+
+### 🔍 State-Space Models / Modelos de Espacio de Estados  
+🇬🇧 Exploratory work with Kalman Filter  
+🇪🇸 Proyecto exploratorio con Filtro de Kalman  
+🔗 [Read PDF](https://github.com/franksalomon/Structural-Time-Series-Models/blob/main/MEST_Bloque_2.pdf)
+
+### 🖥️ Java GUI Application  
+🇬🇧 GUI app for managing bibliographic database, with MySQL integration  
+🔗 [View repo](https://github.com/franksalomon/mi-proyecto-java)
 
 ---
 
@@ -52,28 +75,6 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ---
 
-## 📈 Featured Projects / Proyectos Destacados
-
-### 🧠 Machine Learning Models  
-🇬🇧 Implementation of Decision Tree, Random Forest, KNN with performance evaluation  
-🇪🇸 Implementación de Árbol de Decisión, Bosques Aleatorios, KNN  
-🔗 [View project](https://franksalomon.github.io/Machine-Learning-Models/)
-
-### ⏳ Time Series Analysis / Análisis de Series Temporales  
-🇬🇧 Forecasting with ARIMA and SARIMA, stationarity tests  
-🇪🇸 Pronóstico con ARIMA y SARIMA, pruebas de estacionariedad  
-🔗 [Read PDF](https://github.com/franksalomon/time-series/blob/main/Series_Temporales_Bloque1.pdf)
-
-### 🔍 State-Space Models / Modelos de Espacio de Estados  
-🇬🇧 Exploratory work with Kalman Filter  
-🇪🇸 Proyecto exploratorio con Filtro de Kalman  
-🔗 [Read PDF](https://github.com/franksalomon/Structural-Time-Series-Models/blob/main/MEST_Bloque_2.pdf)
-
-### 🖥️ Java GUI Application  
-🇬🇧 GUI app for managing bibliographic database, with MySQL integration  
-🔗 [View repo](https://github.com/franksalomon/mi-proyecto-java)
-
----
 
 ## 🔍 Looking for Opportunities / En búsqueda de oportunidades
 
