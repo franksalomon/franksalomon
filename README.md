@@ -10,7 +10,7 @@ Frank Salomón Sulca Palomino</a></h1>
 
 🎓 I’m finishing my master's studies at the University of Zaragoza and the University of the Basque Country.
 
-🤖 My main focus: Leveraging advanced data science and machine learning methods, such as logistic regression, decision trees, and random forests, to enhance IT audit processes and enable data-driven insights.
+🤖 My main focus is utilizing advanced data science and machine learning methodologies, such as logistic regression, decision trees, and random forests, to enhance processes and enable data-driven insights across various industries.
 
 🎨 I’ve explored models such as ARIMA and SARIMA, and I’m getting familiar with the Kalman Filter and state-space models
 
