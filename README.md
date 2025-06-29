@@ -13,9 +13,9 @@ Frank Salomón Sulca Palomino</a></h1>
     <td>
       <h3>🎓 About Me / Sobre mí</h3>
       <ul>
-        <li>🇬🇧 I’m finishing my master’s studies at the University of Zaragoza and the University of the Basque Country.</li>
-        <li>🤖 My main focus is utilizing advanced data science and machine learning methodologies, such as logistic regression, decision trees, and random forests, to enhance processes and enable data-driven insights across various industries.</li>
-        <li>🎨 I’ve explored models such as ARIMA and SARIMA, and I’m getting familiar with the Kalman Filter and state-space models.</li>
+        <li> I’m finishing my master’s studies at the University of Zaragoza and the University of the Basque Country.</li>
+        <li> My main focus is utilizing advanced data science and machine learning methodologies, such as logistic regression, decision trees, and random forests, to enhance processes and enable data-driven insights across various industries.</li>
+        <li> I’ve explored models such as ARIMA and SARIMA, and I’m getting familiar with the Kalman Filter and state-space models.</li>
       </ul>
     </td>
     <td width="33%">
@@ -28,15 +28,15 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ## 💼 Experience / Experiencia
 
-**Banco Falabella Perú (2020–2024)**  
-📌 KPI reporting with Excel & Power BI | Data validation for process optimization  
-📌 Support in initiatives to improve customer experience  
+**🎓 Academic Projects – Master’s Degree (2024–2025)**  
+- Time series forecasting with ARIMA, SARIMA, and Kalman Filter  
+- Applied statistical models to identify temporal patterns and improve predictions
 
-**Academic Projects (2024–2025)**  
-🔬 Time series forecasting (ARIMA, SARIMA, Kalman Filter)  
-📈 Research on temporal patterns and predictive modeling  
+**🏦 Banco Falabella Perú (2020–2024)**  
+- Dashboard reporting and data consultation using Excel and Power BI  
+- Provided support to internal teams and clients through report generation and process queries  
 
-📄 *For more details, check my [CV](#) or LinkedIn.*
+📄 For more details, check my [LinkedIn](https://www.linkedin.com/in/frank-salom%C3%B3n-8251a51a8/).
 
 ---
 
