@@ -7,8 +7,7 @@
 </h2>
 
 <p align="center">
-  🇬🇧 Master’s in Statistical Modeling | 🇪🇸 Máster en Modelización Estadística  
-  🎯 Focused on data science, time series, and statistical research
+  🇬🇧 Master’s in Statistical Modeling | 🇪🇸 Máster en Modelización Estadística
 </p>
 
 <p align="right">
