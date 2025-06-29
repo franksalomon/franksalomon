@@ -86,13 +86,13 @@ Frank Salomón Sulca Palomino</a></h1>
 ### 🔗 Connect with me / Conéctate conmigo
 
 <p align="center">
-  <a href="https://linkedin.com/in/frank-salomon-8251a51a8/" target="blank">
+  <a href="https://www.linkedin.com/in/frank-salom%C3%B3n-8251a51a8/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png" alt="LinkedIn"/>
   </a>
-  <a href="https://github.com/franksalomon" target="blank">
+  <a href="https://github.com/franksalomon" target="_blank" rel="noopener noreferrer">
     <img src="https://img.icons8.com/doodle/40/000000/github--v1.png" alt="GitHub"/>
   </a>
-  <a href="mailto:salomo.ssp.96@gmail.com" target="blank">
+  <a href="mailto:f.salomon.sulca@gmail.com" target="_blank" rel="noopener noreferrer">
     <img src="https://img.icons8.com/doodle/40/000000/gmail-new.png" alt="Email"/>
   </a>
 </p>
