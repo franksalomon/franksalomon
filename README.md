@@ -1,16 +1,8 @@
-<h1 align="center">Hi 👋 / ¡Hola!</h1>
+<h1 align="center">Hi 👋, I'm <a href="https://github.com/franksalomon" target="blank">
+Frank Salomón Sulca Palomino</a></h1>
+<h3 align="center">Master’s student in Mathematical Modeling, Statistics, and Computing</h3>
 
-<h2 align="center">
-  <a href="https://github.com/franksalomon" target="blank">
-    Frank Salomón Sulca Palomino
-  </a>
-</h2>
-
-<p align="center">
-  🇬🇧 Master’s in Statistical Modeling | 🇪🇸 Máster en Modelización Estadística
-</p>
-
-<p align="right">
+<p align="left">
   <img src="https://komarev.com/ghpvc/?username=franksalomon&label=Profile%20views&color=0e75b6&style=flat" alt="franksalomon" />
 </p>
 
