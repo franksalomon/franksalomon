@@ -7,7 +7,6 @@ Frank Salomón Sulca Palomino</a></h1>
 </p>
 
 ---
-
 <table>
   <tr>
     <td>
@@ -23,8 +22,6 @@ Frank Salomón Sulca Palomino</a></h1>
     </td>
   </tr>
 </table>
-
----
 
 ## 📈 Featured Projects / Proyectos Destacados
 
