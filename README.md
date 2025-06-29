@@ -1,6 +1,5 @@
 # Hi 👋 / ¡Hola!
 
-```markdown
 <h1 align="center">Hi 👋 / ¡Hola!</h1>
 <h2 align="center">
   <a href="https://github.com/franksalomon" target="blank">
