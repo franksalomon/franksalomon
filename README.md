@@ -14,7 +14,7 @@ Frank Salomón Sulca Palomino</a></h1>
       <ul>
         <li>I am currently pursuing a master’s degree in Mathematical Modeling, Statistics, and Computing at the University of Zaragoza and the University of the Basque Country.</li>
         <li> My academic focus is on data science and applied machine learning, working with models such as logistic regression, decision trees, and random forests.</li>
-        <li> I’ve explored models such as ARIMA and SARIMA, and I’m getting familiar with the Kalman Filter and state-space models.</li>
+        <li> I have also worked with time series models (ARIMA and SARIMA) and I am getting familiar, at a conceptual level, with state-space models and the Kalman filter.</li>
       </ul>
     </td>
     <td width="33%">
