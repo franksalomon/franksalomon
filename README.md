@@ -49,12 +49,14 @@ Frank Salomón Sulca Palomino</a></h1>
 ## 💼 Experience / Experiencia
 
 **🎓 Academic Projects – Master’s Degree (2024–2025)**  
-- Time series forecasting with ARIMA, SARIMA, and Kalman Filter  
-- Applied statistical models to identify temporal patterns and improve predictions
+- Time series forecasting using ARIMA and SARIMA models.
+- Exploratory analysis of temporal data to identify patterns and improve predictive performance.
+- Familiarization, at a conceptual level, with state-space models and the Kalman Filter.
 
 **🏦 Banco Falabella Perú (2020–2024)**  
-- Dashboard reporting and data consultation using Excel and Power BI  
-- Provided support to internal teams and clients through report generation and process queries  
+- Dashboard reporting and data analysis using Excel and Power BI.
+- Monitoring operational metrics and supporting decision-making processes.
+- Work with structured data and quality control in regulated environments.
 
 📄 For more details, check my [LinkedIn](https://www.linkedin.com/in/frank-salom%C3%B3n-8251a51a8/).
 
@@ -62,11 +64,12 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ## 🛠️ Technical Skills / Habilidades Técnicas
 
-- **Programming / Lenguajes**: Python, R, Java, MATLAB  
-- **Databases / Bases de datos**: MySQL, SQL, Excel  
-- **BI & Visualization / BI y Visualización**: Power BI, Excel (dashboards, pivot tables)  
-- **ML & Statistics / ML y Estadística**: Logistic Regression, Random Forest, Decision Trees, ARIMA/SARIMA, PCA, Poisson Regression  
-- **Processes / Procesos**: ETL exploration, model deployment  
+- **Programming / Lenguajes**: Python, R
+- **Databases / Bases de datos**: SQL
+- **BI & Visualization / BI y Visualización**:  Pandas, Power BI, Excel
+- **ML & Statistics / ML y Estadística**: Logistic Regression, Decision Trees, Random Forest
+- **Time Series Analysis**: ARIMA, SARIMA
+- **Data Processes / Procesos**: Data cleaning, transformation, and exploratory analysis (ETL)
 - **Tools / Herramientas**: Git/GitHub, LaTeX  
 - **Soft Skills / Habilidades Blandas**: Communication, adaptability, quick learning  
 
@@ -75,8 +78,10 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ## 🔍 Looking for Opportunities / En búsqueda de oportunidades
 
-- **🇬🇧 Roles**: Data Scientist, Time Series Analyst, Statistical Modeling Researcher  
-- **🇪🇸 Roles**: Científico de Datos, Analista de Series Temporales, Investigador en Modelización Estadística  
+- Interested in Master’s Thesis (TFM) and internship opportunities in Data Science and Applied Machine Learning.
+- Particularly motivated by projects involving model adaptation and integration into decision-making systems.
+- Open to learning and collaborating in applied Data & AI environments.
+  
 - 📫 *Check out my projects and feel free to reach out! / ¡Echa un vistazo a mis proyectos y no dudes en contactarme!*
 
 ---
