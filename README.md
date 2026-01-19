@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm <a href="https://github.com/franksalomon" target="blank">
 Frank Salomón Sulca Palomino</a></h1>
-<h3 align="center">Master’s graduate in Mathematical Modeling, Statistics, and Computing (thesis pending)</h3>
+<h3 align="center">Master’s student in Mathematical Modeling, Statistics, and Computing</h3>
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=franksalomon&label=Profile%20views&color=0e75b6&style=flat" alt="franksalomon" />
