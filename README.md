@@ -81,8 +81,7 @@ Frank Salomón Sulca Palomino</a></h1>
 - Interested in Master’s Thesis (TFM) and internship opportunities in Data Science and Applied Machine Learning.
 - Particularly motivated by projects involving model adaptation and integration into decision-making systems.
 - Open to learning and collaborating in applied Data & AI environments.
-  
-- 📫 *Check out my projects and feel free to reach out! / ¡Echa un vistazo a mis proyectos y no dudes en contactarme!*
+📫 *Check out my projects and feel free to reach out! / ¡Echa un vistazo a mis proyectos y no dudes en contactarme!*
 
 ---
 
