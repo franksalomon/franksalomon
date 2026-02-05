@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm <a href="https://github.com/franksalomon" target="blank">
 Frank Salomón Sulca Palomino</a></h1>
-<h3 align="center">Master’s student in Mathematical Modeling, Statistics, and Computing</h3>
+<h3 align="center">Master’s student in Mathematical Modeling, Statistics & Computing | Applied Machine Learning & Data Science | Python, SQL</h3>
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=franksalomon&label=Profile%20views&color=0e75b6&style=flat" alt="franksalomon" />
@@ -12,9 +12,9 @@ Frank Salomón Sulca Palomino</a></h1>
     <td>
       <h3>🎓 About Me / Sobre mí</h3>
       <ul>
-        <li>I am currently pursuing a master’s degree in Mathematical Modeling, Statistics, and Computing at the University of Zaragoza and the University of the Basque Country.</li>
-        <li> My academic focus is on data science and applied machine learning, working with models such as logistic regression, decision trees, and random forests.</li>
-        <li> I have also worked with time series models (ARIMA and SARIMA) and I am getting familiar, at a conceptual level, with state-space models and the Kalman filter.</li>
+        <li>Currently pursuing a Master’s in Mathematical Modeling, Statistics, and Computing (University of Zaragoza & University of the Basque Country).</li>
+        <li>Focused on applied data science and machine learning: classification models, feature engineering, and evaluation pipelines.</li>
+        <li>Experience with time series (ARIMA/SARIMA) and exploratory data analysis on real-world datasets.</li>
       </ul>
     </td>
     <td width="33%">
