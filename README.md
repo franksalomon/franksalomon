@@ -28,7 +28,7 @@ Frank Salomón Sulca Palomino</a></h1>
 ### 🧠 Customer Satisfaction Prediction — Banking Dataset (Academic Project)
 🇬🇧 Implementation of Decision Tree, Random Forest, KNN with performance evaluation  
 🇪🇸 Implementación de Árbol de Decisión, Bosques Aleatorios, KNN  
-🔗 [View project](https://franksalomon.github.io/Machine-Learning-Models/)
+🔗 [View project](https://github.com/franksalomon/Machine-Learning-Models/blob/main/notebooks/index.ipynb)
 
 ### ⏳ Time Series Forecasting with ARIMA/SARIMA (Academic Project)
 🇬🇧 Forecasting with ARIMA and SARIMA, stationarity tests  
