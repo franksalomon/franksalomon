@@ -25,12 +25,12 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ## 📈 Featured Projects / Proyectos Destacados
 
-### 🧠 Machine Learning Models  
+### 🧠 Customer Satisfaction Prediction — Banking Dataset (Academic Project)
 🇬🇧 Implementation of Decision Tree, Random Forest, KNN with performance evaluation  
 🇪🇸 Implementación de Árbol de Decisión, Bosques Aleatorios, KNN  
 🔗 [View project](https://franksalomon.github.io/Machine-Learning-Models/)
 
-### ⏳ Time Series Analysis / Análisis de Series Temporales  
+### ⏳ Time Series Forecasting with ARIMA/SARIMA (Academic Project)
 🇬🇧 Forecasting with ARIMA and SARIMA, stationarity tests  
 🇪🇸 Pronóstico con ARIMA y SARIMA, pruebas de estacionariedad  
 🔗 [Read PDF](https://github.com/franksalomon/time-series/blob/main/Series_Temporales_Bloque1.pdf)
@@ -51,7 +51,7 @@ Frank Salomón Sulca Palomino</a></h1>
 **🎓 Academic Projects – Master’s Degree (2024–2025)**  
 - Time series forecasting using ARIMA and SARIMA models.
 - Exploratory analysis of temporal data to identify patterns and improve predictive performance.
-- Familiarization, at a conceptual level, with state-space models and the Kalman Filter.
+- Introductory exploration of state-space models and the Kalman Filter.
 
 **🏦 Banco Falabella Perú (2020–2024)**  
 - Dashboard reporting and data analysis using Excel and Power BI.
