@@ -25,6 +25,12 @@ Frank Salomón Sulca Palomino</a></h1>
 
 ## 📈 Featured Projects / Proyectos Destacados
 
+### 💳 Credit Default Risk Prediction — Home Credit Dataset (Master’s Thesis)
+🇬🇧 Credit risk modeling with feature engineering, class imbalance treatment, XGBoost, cross-validation, and PR-AUC/ROC-AUC evaluation  
+🇪🇸 Modelado de riesgo de crédito con ingeniería de variables, tratamiento del desbalance, XGBoost, validación cruzada y evaluación mediante PR-AUC/ROC-AUC  
+🔗 [View notebook](https://github.com/franksalomon/home-credit-default-risk-tfm/blob/main/TFM_FINAL.ipynb)
+
+
 ### 🧠 Customer Satisfaction Prediction — Banking Dataset (Academic Project)
 🇬🇧 Implementation of Decision Tree, Random Forest, KNN with performance evaluation  
 🇪🇸 Implementación de Árbol de Decisión, Bosques Aleatorios, KNN  
