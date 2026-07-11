@@ -26,8 +26,8 @@ Frank Salomón Sulca Palomino</a></h1>
 ## 📈 Featured Projects / Proyectos Destacados
 
 ### 💳 Home Credit Default Risk Prediction — Master’s Thesis
-🇬🇧 Comparison of Logistic Regression with L1 and L2 regularization, Random Forest, and XGBoost, including feature engineering, class imbalance treatment, cross-validation, and PR-AUC/ROC-AUC evaluation. XGBoost was selected as the final model.  
-🇪🇸 Comparación de Regresión Logística con regularización L1 y L2, Random Forest y XGBoost, incluyendo ingeniería de variables, tratamiento del desbalance de clases, validación cruzada y evaluación mediante PR-AUC/ROC-AUC. XGBoost fue seleccionado como modelo final.  
+🇬🇧 Credit default prediction with feature engineering and class imbalance handling. Comparison of Logistic Regression (L1/L2), Random Forest, and XGBoost using cross-validation and PR-AUC/ROC-AUC.  
+🇪🇸 Predicción de impago con ingeniería de variables y tratamiento del desbalance. Comparación de Regresión Logística (L1/L2), Random Forest y XGBoost mediante validación cruzada y PR-AUC/ROC-AUC.  
 🔗 [View notebook](https://github.com/franksalomon/home-credit-default-risk-tfm/blob/main/home_credit_default_risk_modeling.ipynb)
 
 
