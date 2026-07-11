@@ -29,6 +29,7 @@ Frank Salomón Sulca Palomino</a></h1>
 🇬🇧 Credit default prediction with feature engineering and class imbalance handling. Comparison of Logistic Regression (L1/L2), Random Forest, and XGBoost using cross-validation and PR-AUC/ROC-AUC.  
 🇪🇸 Predicción de impago con ingeniería de variables y tratamiento del desbalance. Comparación de Regresión Logística (L1/L2), Random Forest y XGBoost mediante validación cruzada y PR-AUC/ROC-AUC.  
 🔗 [View notebook](https://github.com/franksalomon/home-credit-default-risk-tfm/blob/main/home_credit_default_risk_modeling.ipynb)
+📄 [Read Master’s Thesis (PDF)](https://github.com/franksalomon/home-credit-default-risk-tfm/blob/main/home_credit_default_risk_master_thesis.pdf)
 
 
 ### 🧠 Customer Satisfaction Prediction — Banking Dataset (Academic Project)
